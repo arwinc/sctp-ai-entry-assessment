@@ -14,18 +14,12 @@
 
 function convertTemp(value, unit) {
   // Add your code here
-  let result = -1;
-  if (unit === "C") {
-    result = (value * 9 / 5) + 32;
-  }
-  else if (unit === "F") {
-    result = (value - 32) * 5 / 9;
-  }
-  else {
-    return result;
-  }
-
-  return result.toFixed(2);
+  const converter = {
+    C: value => (value * 9 / 5) + 32,
+    F: value => (value - 32) * 5 / 9,
+  };
+  let func = converter[unit];
+  return func ? func(value).toFixed(2) : -1;
 }
 
 
