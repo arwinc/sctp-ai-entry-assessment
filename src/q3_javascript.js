@@ -7,7 +7,13 @@
 // Example: formatName("John", "Smith") → "Smith, John"
 
 function formatName(firstName, lastName) {
-    // Add your code here
+  // Add your code here
+  function capitalise(str) {
+    if (!str) return "";
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  }
+
+  return `${capitalise(lastName)}, ${capitalise(firstName)}`;
 }
 
 
@@ -19,7 +25,13 @@ function formatName(firstName, lastName) {
 // and always produce properly capitalised output.
 
 function formatInitials(firstName, lastName) {
-    // Add your code here
+  // Add your code here
+  function getInitial(str) {
+    if (!str) return "";
+    return `${str.charAt(0).toUpperCase()}.`;
+  }
+
+  return getInitial(firstName) + getInitial(lastName);
 }
 
 
@@ -31,3 +43,7 @@ function formatInitials(firstName, lastName) {
 //   formatInitials("bob","lim")   → Expected: "B.L."
 
 // Add your code here
+console.log('formatName("Alice", "Tan")    →', formatName("Alice", "Tan"));
+console.log('formatName("bob", "lim")      →', formatName("bob", "lim"));
+console.log('formatInitials("Alice","Tan") →', formatInitials("Alice", "Tan"));
+console.log('formatInitials("bob","lim")   →', formatInitials("bob", "lim"));

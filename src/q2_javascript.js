@@ -5,7 +5,7 @@
 // Declare an empty array called inventory to store item names as strings.
 
 // Add your code here
-
+const inventory = [];
 
 // Task 2:
 // Write a function called addItem(itemName) that adds the given item to the
@@ -13,7 +13,12 @@
 // Example message: "Mouse is already in inventory."
 
 function addItem(itemName) {
-    // Add your code here
+  // Add your code here
+  if (inventory.includes(itemName)) {
+    console.log(`${itemName} is already in inventory.`);
+  } else {
+    inventory.push(itemName);
+  }
 }
 
 
@@ -22,7 +27,12 @@ function addItem(itemName) {
 // If the inventory is empty, print: "Inventory is empty."
 
 function listInventory() {
-    // Add your code here
+  // Add your code here
+  if (inventory.length == 0) { 
+    console.log("Inventory is empty.");
+  } else {
+    console.log("Inventory:", `[ '${ inventory.join("', '") }' ]`);
+  }
 }
 
 

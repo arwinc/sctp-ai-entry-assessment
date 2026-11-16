@@ -13,7 +13,19 @@
 //   - Round the result to 2 decimal places before returning
 
 function convertTemp(value, unit) {
-    // Add your code here
+  // Add your code here
+  let result = -1;
+  if (unit === "C") {
+    result = (value * 9 / 5) + 32;
+  }
+  else if (unit === "F") {
+    result = (value - 32) * 5 / 9;
+  }
+  else {
+    return result;
+  }
+
+  return result.toFixed(2);
 }
 
 
@@ -25,3 +37,7 @@ function convertTemp(value, unit) {
 //   convertTemp("invalid","X") → Expected: -1
 
 // Add your code here
+console.log('convertTemp(100, "C")      →', convertTemp(100, "C"));
+console.log('convertTemp(32, "F")       →', convertTemp(32, "F"));
+console.log('convertTemp(37, "C")       →', convertTemp(37, "C"));
+console.log('convertTemp("invalid","X") →', convertTemp("invalid", "X"));
